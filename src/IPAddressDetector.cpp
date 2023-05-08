@@ -14,7 +14,7 @@ bool isValid(string s) {
 
 int main (int argc, char* argv[]) {
     if (argc !=2) {
-        cout << "program doesn't match search <string>" << endl;
+        cout << "program call doesn't match expected format .\\IPAddressDetector.exe <string>" << endl;
         return 1; 
     }
     string input = argv[1];
@@ -22,8 +22,8 @@ int main (int argc, char* argv[]) {
         return 1;
     }
     for (int i = 0; i < input.size(); ++i) {
-        for (int j = 7 ; j <= 16 && i + j <= input.length(); ++j) {
-            string substr = input.substr(i, + j);
+        for (int j = 7 ; j < 15 && i + j <= input.length(); ++j) {
+            string substr = input.substr(i, j);
             if ( isValid(substr)) {
                 cout << substr << endl;
                 i += j - 1;
