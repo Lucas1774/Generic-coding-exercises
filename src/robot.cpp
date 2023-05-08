@@ -102,7 +102,6 @@ int main() {
 
     room.printRoom(robot);
 
-
     robot.turn_left();
     robot.forward(2);
     room.printRoom(robot);
