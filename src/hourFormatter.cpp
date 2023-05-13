@@ -9,11 +9,11 @@ class Converter {
         int h;
     public:
         void setTime(int seconds) {
-            this->s = seconds;
-            this->m = this->s / 60;
-            this->h = this->m / 60;
-            this->m = this->m % 60;
-            this->s = this->s % 60;
+            this -> s = seconds;
+            this -> m = this -> s / 60;
+            this -> s = this -> s % 60;
+            this -> h = this -> m / 60;
+            this -> m = this -> m % 60;
         }
         
         void display() {
@@ -28,10 +28,11 @@ class Converter {
 };
 
 int main() {
-    cout <<"Enter time in seconds: ";
-    int seconds;
-    cin >> seconds;
     Converter c;
+    int seconds;
+
+    cout << "Enter time in seconds: ";
+    cin >> seconds;
     c.setTime(seconds);
     c.display();
     return 0;

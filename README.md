@@ -25,7 +25,7 @@ It takes a string and prints all the non-overlapped IP addresses in it. If there
 
 I got mad stuck on a couple of points:
 - First, I don't know exactly how to combine the work of strings and regex. I was trying to define a number using a string, because I was afraid that I couldn't concatenate regex to create a new one, and I knew I could concatenate strings. I gave up on that and defined the whole thing in a line.
-- Second, the indexing of the characters of the original string to form substrings to analyze was a nightmare. I wanted to make a good job, so I wanted to check only when it was worth checking (strings with length [7 - 15]). The main issue though was that I thought the `substr()` method's second argument was supposed to be the index of the last character of the substring, as supposed to the total length
+- Second, the indexing of the characters of the original string to form substrings to analyze was a nightmare. I wanted to make a good job, so I wanted to check only when it was worth checking (strings with length [7 - 15]). The main issue though was that I thought the `substr()` method's second argument was supposed to be the index of the last character of the substring, as supposed to the total length. I could've restricted the starting character (i) iteration to [0, s.length() - 8), but considering this saves a flat, very small load, it is fine as is.
 
 # Hour Formatter
 
