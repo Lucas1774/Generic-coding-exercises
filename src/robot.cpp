@@ -1,7 +1,9 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
-enum class Orientation {    
+enum Orientation {    
     NORTH,
     EAST,
     SOUTH,
@@ -15,47 +17,46 @@ private:
     Orientation orientation;
 public:
     Robot(int x, int y, Orientation orientation) {
-        this->x = x;
-        this->y = y;
-        this->orientation = orientation;
+        this -> x = x;
+        this -> y = y;
+        this -> orientation = orientation;
     }
 
     void turn_left() {
-        orientation = static_cast<Orientation>(((static_cast<int>(orientation) +4)-1) % 4);
+        this -> orientation = static_cast<Orientation>((static_cast<int>(orientation) +3) % 4);
     }
 
     void turn_right() {
-        orientation = static_cast<Orientation>((static_cast<int>(orientation) +1) % 4);
+        this -> orientation = static_cast<Orientation>((static_cast<int>(orientation) +1) % 4);
     }
 
     void forward(int steps) {
-        switch (this->orientation) {
-            case Orientation::NORTH:
-                this ->y -= steps;
+        switch (this -> orientation) {
+            case NORTH:
+                this -> y -= steps;
                 break;
-            case Orientation::EAST:
-                this ->x += steps;
+            case EAST:
+                this -> x += steps;
                 break;
-            case Orientation::SOUTH:
-                this ->y += steps;
+            case SOUTH:
+                this -> y += steps;
                 break;
-            case Orientation::WEST:
-                this ->x -= steps;
+            case WEST:
+                this -> x -= steps;
                 break;
         }
     }
 
     char get_orientation() {
-        int value = static_cast<int>(this->orientation);
-        switch (value) {
-            case 0:
+        switch (this -> orientation) {
+            case NORTH:
                 return 'N';
-            case 1:
+            case EAST:
                 return 'E';
-            case 2:
+            case SOUTH:
                 return 'S';
-            case 3:
-                return 'W';
+            case WEST:
+                return 'W';            
             default:
                 return '?';
         }
@@ -81,12 +82,14 @@ public:
         this -> length = l;
     }
 
-    void printRoom(Robot robot) {
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < width; j++) {
-                if (robot.getX() == j && robot.getY() == i) {
-                    cout << robot.get_orientation();
-                } else {
+    void printRoom(vector <Robot> robots) {
+        for (int i = 0; i < this -> length; i++) {
+            for (int j = 0; j < this -> width; j++) {
+                for (Robot robot: robots){
+                    if (robot.getX() == j && robot.getY() == i) {
+                        cout << robot.get_orientation();
+                        break;
+                    } 
                     cout << "-";
                 }
             }
@@ -99,16 +102,19 @@ public:
 int main() {
     Room room(5, 5);
     Robot robot(2, 2, Orientation::NORTH);
+    vector <Robot> robots;
+    robots.push_back(robot);
+    room.printRoom(robots);
+    cout << endl;
 
-    room.printRoom(robot);
+    robots[0].turn_left();
+    robots[0].forward(2);
+    room.printRoom(robots);
+    cout << endl;
 
-    robot.turn_left();
-    robot.forward(2);
-    room.printRoom(robot);
-
-    robot.turn_right();
-    robot.forward(1);
-    room.printRoom(robot);
+    robots[0].turn_right();
+    robots[0].forward(1);
+    room.printRoom(robots);
 
     return 0;
 }
