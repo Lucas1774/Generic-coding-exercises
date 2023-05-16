@@ -33,3 +33,7 @@ This is a very simple program that takes a certain amount of seconds and returns
 
 There is nothing else to say. I'm pretty sure I've done similar unit-dumping logic, maybe for days months and years instead of this. Yeah, that sounds right, on the calendar program probably.
 
+## Bouncy Numbers Detector
+
+This one I found in Euler. As of right now, it is not great, since checking if it is bouncy should only look at the last two digits, and check if it is increasing, decreasing or both by keeping track of whether the number without the last digit was increasing, decreasing or both (Some sort of dynamic programming solution). It works, it just could work faster.
+
