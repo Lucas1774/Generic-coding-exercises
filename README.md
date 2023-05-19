@@ -2,11 +2,9 @@ THIS WAS A CODE GAME FOR A JOB APPLICATION.
 
 ## Context
 
-I got asked to write these programs in a web application that was supposed to record my changes in the form. Unfortunately, the page didn't work properly in my web explorer (or maybe I was supposed to take thirty minutes for each), so I sent these files instead. I don't know yet if I got the job, but I'm technically underqualified (unergrad), even though I did great here.
+I got asked to write these programs in a web application that was supposed to record my changes in the form. Unfortunately, the page didn't work properly in my web explorer (or maybe I was supposed to take thirty minutes for each), so I sent these files instead.
 
 The whole thing took me easily three hours. I'm not sure if that was the intended span.
-
-I like the job. It is very convenient for me location-wise, and if the stuff I have to write is half as fun as these, I will have a blast there. Fingers crossed, I'm gonna need to have them crossed tight.
 
 ## Robot
 
@@ -36,4 +34,6 @@ There is nothing else to say. I'm pretty sure I've done similar unit-dumping log
 ## Bouncy Numbers Detector
 
 This one I found in Euler. As of right now, it is not great, since checking if it is bouncy should only look at the last two digits, and check if it is increasing, decreasing or both by keeping track of whether the number without the last digit was increasing, decreasing or both (Some sort of dynamic programming solution). It works, it just could work faster.
+
+I will use this as a launch platform to get better at math.
 
