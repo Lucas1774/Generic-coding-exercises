@@ -33,7 +33,7 @@ There is nothing else to say. I'm pretty sure I've done similar unit-dumping log
 
 ## Bouncy Numbers Detector
 
-This one I found in Euler. As of right now, it is not great, since checking if it is bouncy should only look at the last two digits, and check if it is increasing, decreasing or both by keeping track of whether the number without the last digit was increasing, decreasing or both (Some sort of dynamic programming solution). It works, it just could work faster.
+This one I found in Euler. As of right now, it is not great, since checking if it is bouncy should only look at the last two digits, and check if it is increasing, decreasing or both by keeping track of whether the number without the last digit was increasing, decreasing or both (Some sort of dynamic programming solution). It works, it just could work faster.  
+As with many other Euler problems, it can be solved in O(1) expanding the formula strictly increasing(n) + strictly decreasing(n) - both(n). That being said, the implementation I just described, where you don't go full maths but keep the programming efficient would be a good in-between I'd be happier with (but will probably never get to do).
 
-I will use this as a launch platform to get better at math.
-
+I will use this as a launch platform to get better at math. Mainly, get better at mathematically describing case counting.
